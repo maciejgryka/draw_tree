@@ -106,5 +106,6 @@ def draw_binary_tree(depth, nodes):
 
   mainloop()
 
-draw_binary_tree(9, read_forest('C:/Work/research/shadow_removal/experiments/2012-03-06/output/size100/data/trees3.data', 1))
+# draw_binary_tree(9, read_forest('C:/Work/research/shadow_removal/experiments/2012-03-06/output/size100/data/trees3.data', 1))
+draw_binary_tree(9, read_forest('C:/Work/VS2010/PenumbraRemoval/x64/data/patches_trees3.data', 0))
 # draw_binary_tree(9, read_forest('dummy.data', 0))
