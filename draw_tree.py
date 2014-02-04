@@ -40,6 +40,7 @@ def read_node(f, print_leaves=False):
 
     return n
 
+
 def read_tree(f, print_leaves=False):
     f.readline()
     tree_id = int(f.readline())
@@ -52,6 +53,7 @@ def read_tree(f, print_leaves=False):
         node = read_node(f, print_leaves)
         nodes[node.node_id] = node
     return nodes
+
 
 def read_forest(file, t=0):
     f = open(file, 'r')
@@ -69,10 +71,12 @@ def read_forest(file, t=0):
     f.close()
     return nodes
 
+
 def draw_circle(w, x, y, r = 10):
     if r > 20:
         r = 20;
     w.create_oval(x-r, y-r, x+r, y+r, fill='#dddddd')
+
 
 def draw_node(w, node, tree_w, level_h, r = 10):
     depth = 0
@@ -90,6 +94,7 @@ def draw_node(w, node, tree_w, level_h, r = 10):
     if depth < 7:
         w.create_text(x, y, text=node.n_samples, fill=text_color, font='Consolas, 7')
 
+
 def draw_binary_tree(depth, nodes):
     tree_w = 128*depth	# tree width
     level_h = 75	# level height
@@ -102,6 +107,7 @@ def draw_binary_tree(depth, nodes):
         draw_node(w, node, tree_w, level_h)
 
     mainloop()
+
 
 if __name__ == '__main__':
     draw_binary_tree(9, read_forest('dummy.data', 0))
