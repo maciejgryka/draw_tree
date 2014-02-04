@@ -1,6 +1,7 @@
-from Tkinter import *
-from numpy import ones, zeros, log2, floor
-import pdb
+from Tkinter import Tk, Canvas, mainloop
+
+import numpy as np
+
 
 class Node:
     def __init__(self):
@@ -46,7 +47,6 @@ def read_tree(f, print_leaves=False):
     n_nodes = int(f.readline())
     n_leaves = int(f.readline())
 
-    # nodes = zeros(10*pow(2,depth)-1)
     nodes = {}
     for n in range(n_nodes):
         node = read_node(f, print_leaves)
@@ -76,7 +76,7 @@ def draw_circle(w, x, y, r = 10):
 
 def draw_node(w, node, tree_w, level_h, r = 10):
     depth = 0
-    if (node.node_id > 0): depth = floor(log2(node.node_id + 1.1))
+    if (node.node_id > 0): depth = np.floor(np.log2(node.node_id + 1.1))
     n_nodes = pow(2, depth) # nodes at this depth
     node_dist = tree_w/(n_nodes+1)
 
@@ -93,9 +93,6 @@ def draw_node(w, node, tree_w, level_h, r = 10):
 def draw_binary_tree(depth, nodes):
     tree_w = 128*depth	# tree width
     level_h = 75	# level height
-
-    # if (nodes[0] == 0):
-        # nodes = ones(2*pow(2,depth)-1)
 
     master = Tk()
     w = Canvas(master, width=tree_w, height=tree_w + level_h/2)
