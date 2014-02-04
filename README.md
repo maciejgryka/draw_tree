@@ -2,7 +2,7 @@ draw_tree
 =========
 A small script to plot binary trees created by a (regression) random forest
 
-maciej.gryka@hgmail.com
+maciej.gryka@gmail.com
 
 The script needs a text file that describes a tree. This text file should contain parameters as specified below, each on a separate line.
 
